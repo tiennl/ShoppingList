@@ -39,6 +39,10 @@ section .todo-outer h1 {
     justify-content: center;
 }
 
+.todo-inner .todo-inner-row .to-do-inner-button{
+    margin-left: 10px;
+}
+
 table tr td button {
     background: no-repeat;
     border: none;
