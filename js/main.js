@@ -37,15 +37,16 @@ function showTask(){
     taskObj.forEach((item, index) => {
 
         if(item.completeStatus===true){
-            taskCompleteValue = `<td class="completed">${item.taskName}</td>`;
+            taskCompleteValue = `<td class="completed">${item.taskName}</td>
+            <td class="completed">${item.taskDescription}</td>`;
         }else{
-            taskCompleteValue = `<td>${item.taskName}</td>`;
+            taskCompleteValue = `<td>${item.taskName}</td>
+            <td>${item.taskDescription}</td>`;
         }
 
         html += `<tr>
                     <th scope="row">${index+1}</th>
                     ${taskCompleteValue}
-                    <td>${item.taskDescription}</td>
                     <td><button type="button" onclick="editTask(${index})" class="text-primary"><i class="fas fa-pencil-alt"></i>Edit</button></td>
                     <td><button type="button" class="text-success" id=${index}><i class="fas fa-check"></i>Done</button></td>
                     <td><button type="button" onclick="deleteItem(${index})" class="text-danger"><i class="fas fa-trash"></i>Delete</button></td>
@@ -147,18 +148,3 @@ deleteAllBtn.addEventListener("click", function(){
     localStorage.setItem("localTask", JSON.stringify(taskObj));
     showTask();
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
